@@ -1,0 +1,7 @@
+BASE_DIR: "experiments/ffhq-hair"
+GAN: "ffhq" # or "cars" or "bedrooms"
+GAN_DIR: "stylegan-models"
+GAN_GPU_IDS: [0]
+GAN_BATCH_SIZE_PER_GPU: 8
+SOLVER_GPU_IDS: [0]
+ANNOTATION: "segmentation"

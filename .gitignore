@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.idea/
+*.yml
+*.json
+*.params
+*.ipynb_checkpoints*
+seg_annotator_gif.py
+bbox_annotator.py
+experiments/
+venv
