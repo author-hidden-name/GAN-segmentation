@@ -41,7 +41,7 @@ cp config.yml.example config.yml
 You can specify directory with experiment using `BASE_DIR` parameter, by default it set to `experiments/ffhq-hair`
 
 #### Train the Decoder
-Train the Decoder using annotated samples in `BASE_DIR` experiment
+Train the Decoder using 20 annotated samples from `experiments/ffhq-hair/data`
 ```bash
 python3 main.py train
 ```
