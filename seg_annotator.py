@@ -15,11 +15,12 @@ from tqdm import tqdm
 
 
 class SegmentationAnnotator(tk.Frame):
-    def __init__(self, parent, root_dir, gan_gpu_ids, solver_gpu_ids, gan_dir, gan='ffhq'):
+    def __init__(self, parent, root_dir, gan_gpu_ids, solver_gpu_ids, gan_dir, gan='ffhq', n_generate=10000):
         tk.Frame.__init__(self, parent)
         self.master.title('Image Viewer')
 
         self.root_dir = root_dir
+        self.n_generate = n_generate
         self.initialize_dirs()
 
         fram = tk.Frame(self)
@@ -288,7 +289,7 @@ class SegmentationAnnotator(tk.Frame):
         self.toggle_disable_main(enabled=False)
         time.sleep(1)
 
-        n_imgs = 10000
+        n_imgs = self.n_generate
         dst_dir = join(self.root_dir, 'dataset', 'train_generated')
         if not isdir(dst_dir):
             makedirs(dst_dir)

@@ -42,12 +42,13 @@ if __name__ == '__main__':
     annotation = cfg['ANNOTATION']
     no_gan = cfg.get('NO_GAN', False)
     imgs_dir = cfg.get('IMGS_DIR', None)
+    n_generate = cfg.get('GENERATE_NUM', 10000)
 
     if args.action == 'annotation':
         root = tk.Tk()
         if annotation == 'segmentation':
             SegmentationAnnotator(root, root_dir, gan_gpu_ids=gan_gpu_ids, solver_gpu_ids=solver_gpu_ids,
-                                  gan_dir=gan_dir, gan=gan).pack(fill='both', expand=True)
+                                  gan_dir=gan_dir, gan=gan, n_generate=n_generate).pack(fill='both', expand=True)
         else:
             print(f'uknown annotation type: {annotation}')
         root.mainloop()
@@ -90,7 +91,7 @@ if __name__ == '__main__':
         if not isdir(dst_dir):
             makedirs(dst_dir)
 
-        n_imgs = 10000
+        n_imgs = n_generate
         iter = netG.get_images(n_imgs)
         index = 0
         with tqdm(total=n_imgs) as pb:
