@@ -10,11 +10,9 @@ cd GAN-segmentation
 pip3 install -r requirements.txt
 ```
 
-- Download stylegan-models converted to mxnet and unzip archive to `stylegan-models` directory:
-https://drive.google.com/open?id=1vP2zUZ9NSJDFy2cc8b2mGp7MINyPW46X
+- Download [stylegan-models](https://drive.google.com/open?id=1vP2zUZ9NSJDFy2cc8b2mGp7MINyPW46X) converted to mxnet and unzip archive to `stylegan-models` directory.
 
-- Download annotated samples and unzip archive to `experiments` directory to reproduce experiment with FFHQ hair segmentation
-https://drive.google.com/open?id=143dRAyJcRDqygepSz8lIr8ElAnwF3xp_
+- Download [annotated samples](https://drive.google.com/open?id=143dRAyJcRDqygepSz8lIr8ElAnwF3xp_) and unzip archive to `experiments` directory to reproduce experiment with FFHQ hair segmentation.
 
 Be sure that your project structure is 
 ```
@@ -38,10 +36,10 @@ Be sure that your project structure is
 ```bash
 cp config.yml.example config.yml
 ```
-You can specify directory with experiment using `BASE_DIR` parameter, by default it set to `experiments/ffhq-hair`
+You can specify directory with experiment using `BASE_DIR` parameter, by default it set to `experiments/ffhq-hair`.
 
 #### Train the Decoder
-Train the Decoder using 20 annotated samples from `experiments/ffhq-hair/data`
+Train the Decoder using annotated samples from `BASE_DIR/data`
 ```bash
 python3 main.py train
 ```
