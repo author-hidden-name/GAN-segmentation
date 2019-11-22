@@ -221,7 +221,12 @@ class SegmentationTester(object):
         self.metric_orig.reset()
         tbar = tqdm(test_data, file=self.tqdm_out, ncols=100)
         for i, (data, dsts) in enumerate(tbar):
-            predicts = [pred[0] for pred in self.evaluator.parallel_forward(data)]
+            predicts = self.evaluator.parallel_forward(data)
+            if len(self.args.ctx) == 1:
+                predicts = [predicts[0]]
+                dsts = [dsts]
+            else:
+                predicts = [pred[0] for pred in predicts]
             targets = [target.as_in_context(predicts[0].context) \
                        for target in dsts]
 
