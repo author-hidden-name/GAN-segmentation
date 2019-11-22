@@ -6,7 +6,7 @@ from utils import load_config_file
 import tkinter as tk
 import argparse
 from os.path import join, isdir
-from os import mkdir
+from os import mkdir, makedirs
 from seg_solver import SegSolver
 from tqdm import tqdm
 import cv2
@@ -86,9 +86,9 @@ if __name__ == '__main__':
         buffer_size = min(2, len(gan_gpu_ids))
         batch_size = gan_batch_size*len(gan_gpu_ids)
         netG = ImageGenerator(gpu_ids=gan_gpu_ids, gan_dir=gan_dir, gan=gan, batch_size=batch_size)
-        dst_dir = join(root_dir, 'generated')
+        dst_dir = join(root_dir, 'dataset', 'train')
         if not isdir(dst_dir):
-            mkdir(dst_dir)
+            makedirs(dst_dir)
 
         n_imgs = 10000
         iter = netG.get_images(n_imgs)

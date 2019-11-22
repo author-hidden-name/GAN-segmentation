@@ -289,23 +289,22 @@ class SegmentationAnnotator(tk.Frame):
         time.sleep(1)
 
         n_imgs = 10000
-        dst_dir = join(self.root_dir, 'generated')
+        dst_dir = join(self.root_dir, 'dataset', 'train')
+        if not isdir(dst_dir):
+            makedirs(dst_dir)
         with tqdm(total=n_imgs) as pb:
             for i in range(n_imgs):
                 img, mask, features = next(self.image_iterator)
                 imname = f'img_{i:06d}.jpg'
-                visname = f'vis_{i:06d}.jpg'
                 maskname = f'mask_{i:06d}.png'
-                img_vis = get_draw_mask(img, mask[:, :, 0], alpha=0.5, color_map=None, skip_background=True)
                 cv2.imwrite(join(dst_dir, imname), img[:,:,::-1])
-                cv2.imwrite(join(dst_dir, visname), img_vis[:,:,::-1])
                 cv2.imwrite(join(dst_dir, maskname), mask[:,:,0])
                 pb.update()
 
         self.toggle_disable_main(enabled=True)
 
     def initialize_dirs(self):
-        subdirs = ['data', 'checkpoints', 'generated']
+        subdirs = ['data', 'checkpoints', 'dataset']
         for subdir in subdirs:
             if not isdir(join(self.root_dir, subdir)):
                 makedirs(join(self.root_dir, subdir))
