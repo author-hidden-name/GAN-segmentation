@@ -289,7 +289,7 @@ class SegmentationAnnotator(tk.Frame):
         time.sleep(1)
 
         n_imgs = 10000
-        dst_dir = join(self.root_dir, 'dataset', 'train')
+        dst_dir = join(self.root_dir, 'dataset', 'train_generated')
         if not isdir(dst_dir):
             makedirs(dst_dir)
         with tqdm(total=n_imgs) as pb:

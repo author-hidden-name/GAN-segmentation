@@ -86,7 +86,7 @@ if __name__ == '__main__':
         buffer_size = min(2, len(gan_gpu_ids))
         batch_size = gan_batch_size*len(gan_gpu_ids)
         netG = ImageGenerator(gpu_ids=gan_gpu_ids, gan_dir=gan_dir, gan=gan, batch_size=batch_size)
-        dst_dir = join(root_dir, 'dataset', 'train')
+        dst_dir = join(root_dir, 'dataset', 'train_generated')
         if not isdir(dst_dir):
             makedirs(dst_dir)
 
