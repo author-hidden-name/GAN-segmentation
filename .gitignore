@@ -8,5 +8,5 @@ __pycache__/
 *.ipynb_checkpoints*
 seg_annotator_gif.py
 bbox_annotator.py
-experiments/
+experiments/*/*
 venv
