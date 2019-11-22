@@ -1,4 +1,7 @@
 # Teaching GAN to generate per-pixel annotation
+
+![](readme-images/GAN-vis.gif)
+
 This repository contains the mxnet implementation for the method described in the paper "Teaching GAN to generate per-pixel annotation".
 
 ### Installation
