@@ -1,5 +1,5 @@
 import mxnet as mx
-# from lib.utils.log import logger, TqdmToLogger
+from lib.utils.log import logger, TqdmToLogger
 
 
 def save_checkpoint(net, args, epoch=None):

@@ -9,7 +9,7 @@ import cv2
 
 
 class FFHQHairSegmentation(SegmentationDataset):
-    def __init__(self, dataset_path, split='train',
+    def __init__(self, dataset_path, split='train', subdir=None,
                  transform=None, augmentator=None, return_path=False,
                  decimation_factor=1,
                  scale_factor=1.0,
@@ -19,14 +19,15 @@ class FFHQHairSegmentation(SegmentationDataset):
         self.train_epoch_len = train_epoch_len
         self.split = split
         self.scale_factor = scale_factor
+        subdir = split if subdir is None else subdir
 
         _images_list = []
         if split == 'train':
-            _images_list = sorted((dataset_path / 'train').rglob('*.jpg'))
+            _images_list = sorted((dataset_path / subdir).rglob('*.jpg'))
         elif split == 'test':
-            _images_list = sorted((dataset_path / 'test').rglob('*.jpg'))
+            _images_list = sorted((dataset_path / subdir).rglob('*.jpg'))
         elif split == 'val':
-            _images_list = sorted((dataset_path / 'val').rglob('*.jpg'))
+            _images_list = sorted((dataset_path / subdir).rglob('*.jpg'))
         else:
             raise RuntimeError('Unknown dataset split.')
 

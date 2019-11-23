@@ -96,8 +96,9 @@ def train(args):
 
     trainset = FFHQHairSegmentation(
         args.input_path,
-        scale_factor=0.5,
-        split='train_generated', transform=model_cfg.input_transform, augmentator=train_augmentator
+        scale_factor=0.5, train_epoch_len=10000,
+        split='train', subdir='train_generated',
+        transform=model_cfg.input_transform, augmentator=train_augmentator
     )
 
     valset = FFHQHairSegmentation(
