@@ -66,7 +66,7 @@ This will create subdirectory in `01_hair_deeplabv3_ffhq_pretrain_gan/runs` with
 
 Test:
 ```bash
-python3 main.py test --batch-size=8 --gpus=0,1 --workers=4 --kvstore=local --input-path "../../../../experiments/ffhq-hair/dataset" runs/<run_subdirectory>
+python3 main.py test --batch-size=8 --gpus=0 --workers=4 --kvstore=local --input-path "../../../../experiments/ffhq-hair/dataset" runs/<run_subdirectory>
 ```
 
 #### Train and test DeepLabV3+ model on real samples
@@ -79,7 +79,7 @@ This will create subdirectory in `01_hair_deeplabv3_ffhq_pretrain_gan/runs` with
 
 Test:
 ```bash
-python3 main.py test --batch-size=8 --gpus=0,1 --workers=4 --kvstore=local --input-path "../../../../experiments/ffhq-hair/dataset" runs/<run_subdirectory> 
+python3 main.py test --batch-size=8 --gpus=0 --workers=4 --kvstore=local --input-path "../../../../experiments/ffhq-hair/dataset" runs/<run_subdirectory> 
 ```
 
 ### Interactive annotator
