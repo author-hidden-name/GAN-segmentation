@@ -6,7 +6,7 @@ This repository contains the mxnet implementation for the method described in th
 
 ### Installation
 
-- Install [mxnet](https://mxnet.apache.org/get_started?version=v1.5.1&platform=linux&language=python&environ=pip&processor=gpu) according to yur CUDA version.
+- Install [mxnet](https://mxnet.apache.org/get_started?version=v1.5.1&platform=linux&language=python&environ=pip&processor=gpu) according to your CUDA version.
 
 - Clone this repo and install dependencies:
 ```bash
