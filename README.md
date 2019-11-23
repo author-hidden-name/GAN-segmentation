@@ -6,6 +6,8 @@ This repository contains the mxnet implementation for the method described in th
 
 ### Installation
 
+- Install [mxnet](https://mxnet.apache.org/get_started?version=v1.5.1&platform=linux&language=python&environ=pip&processor=gpu) according to yur CUDA version.
+
 - Clone this repo and install dependencies:
 ```bash
 git clone https://github.com/author-hidden-name/GAN-segmentation
