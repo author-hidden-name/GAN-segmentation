@@ -91,11 +91,11 @@ if __name__ == '__main__':
             makedirs(dst_dir)
 
         n_imgs = n_generate
-        iter = netG.get_images(n_imgs)
+        data_iter = netG.get_images(n_imgs)
         index = 0
         with tqdm(total=n_imgs) as pb:
             for index in range(n_imgs):
-                img, features = next(iter)
+                img, features = next(data_iter)
                 mask = solver.predict(features)[0].astype(np.uint8)
                 imname = f'img_{index:06d}.jpg'
                 maskname = f'mask_{index:06d}.png'
