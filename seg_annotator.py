@@ -5,7 +5,6 @@ import numpy as np
 import time
 from os import makedirs
 from os.path import join, isdir
-import io
 import random
 import pickle
 from seg_solver import SegSolver

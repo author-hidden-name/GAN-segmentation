@@ -1,10 +1,7 @@
-import sys
 import numpy as np
 import mxnet as mx
-from scipy.spatial.distance import pdist
 import threading
 from sklearn.metrics import roc_auc_score, average_precision_score
-import time
 
 
 def get_classes_names(cfg):

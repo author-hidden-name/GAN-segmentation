@@ -3,7 +3,6 @@ import mxnet as mx
 import numpy as np
 from seg_annotator import SegmentationAnnotator
 from utils import load_config_file
-import tkinter as tk
 import argparse
 from os.path import join, isdir
 from os import mkdir, makedirs
@@ -11,7 +10,6 @@ from seg_solver import SegSolver
 from tqdm import tqdm
 import cv2
 from image_generator import ImageGenerator
-
 
 
 def parse_args():
@@ -45,6 +43,7 @@ if __name__ == '__main__':
     n_generate = cfg.get('GENERATE_NUM', 10000)
 
     if args.action == 'annotation':
+        import tkinter as tk
         root = tk.Tk()
         if annotation == 'segmentation':
             SegmentationAnnotator(root, root_dir, gan_gpu_ids=gan_gpu_ids, solver_gpu_ids=solver_gpu_ids,
