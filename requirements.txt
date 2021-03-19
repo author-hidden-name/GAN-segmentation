@@ -3,6 +3,6 @@ gluoncv==0.5.0
 numpy==1.17.2
 tqdm==4.31.1
 opencv_python==4.0.0.21
-Pillow==6.2.1
+Pillow==8.1.1
 scikit_learn==0.21.3
 PyYAML==5.1.2
